@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app:
+    container_name: powerbi-client
+    image: powerbi-client
+    build: .
+    environment:
+      - PORT=8080
+      - NODE_ENV=dev
+      - ENV_NAME=local
+      - NODE_PATH=src/
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - .:/usr/src/app
